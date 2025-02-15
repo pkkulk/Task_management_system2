@@ -1,1 +1,1 @@
-export const BASE_URL="https://task-management-system2-backend.vercel.app/api/TaskRoutes";
+export const BASE_URL="https://task-management-system2-backend.vercel.app";
