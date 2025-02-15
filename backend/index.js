@@ -20,6 +20,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.options("*", cors(corsOptions)); 
+
 app.use(express.json());
 app.use("/api/TaskRoutes",T);
 mongoose.connect(process.env.MONGO_URI)
