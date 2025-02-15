@@ -9,7 +9,16 @@ const { default: mongoose } = require("mongoose");
 require("dotenv").config();
 const app=express();
 
-app.use(cors());
+const cors = require("cors");
+
+// Allow requests from your frontend domain
+const corsOptions = {
+  origin: "https://task-management-system2.vercel.app", // Your frontend URL
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use("/api/TaskRoutes",T);
