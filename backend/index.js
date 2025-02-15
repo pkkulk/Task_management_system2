@@ -11,14 +11,23 @@ const app=express();
 
 
 // Allow requests from your frontend domain
-const corsOptions = {
-  origin: "https://task-management-system2.vercel.app", // Your frontend URL
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
-};
-
-app.use(cors(corsOptions));
-
+const allowedOrigins = [
+    'http://localhost:5173', // Local development
+    'https://task-management-system2.vercel.app' // Deployed frontend
+  ];
+  
+app.use(
+    cors({
+      origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+      credentials: true // Allow cookies if needed
+    })
+  );
 app.options("*", cors(corsOptions)); 
 
 app.use(express.json());
