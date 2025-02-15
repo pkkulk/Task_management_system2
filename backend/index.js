@@ -9,7 +9,6 @@ const { default: mongoose } = require("mongoose");
 require("dotenv").config();
 const app=express();
 
-const cors = require("cors");
 
 // Allow requests from your frontend domain
 const corsOptions = {
