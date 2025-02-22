@@ -10,8 +10,6 @@ function App() {
     <header className="w-full bg-gray-800 text-white flex justify-between items-center p-4">
   <h1 className="text-2xl font-bold">Task Dashboard</h1>
   <div className="flex items-center gap-4">
-    <span>Welcome, demoUser</span>
-    <span>{new Date().toLocaleDateString()}</span>
     <button className="bg-blue-600 px-3 py-1 rounded">Logout</button>
   </div>
 </header>
